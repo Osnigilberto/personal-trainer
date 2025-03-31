@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Transforme seu corpo com um Personal Trainer. Treinamento personalizado para atingir seus objetivos de forma eficaz e saudável.">
+    <title>Personal Trainer - Transforme seu Corpo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#schedule">Horários</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home">
+        <h1>Transforme Seu Corpo Com um Personal Trainer</h1>
+        <p>Treinamento personalizado para alcançar seus objetivos de forma eficiente e saudável.</p>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou um Personal Trainer com anos de experiência ajudando pessoas a conquistarem saúde e qualidade de vida através do treinamento físico e hábitos saudáveis.</p>
+        <p>Minha missão é criar um plano de treino que se encaixe na sua rotina e transforme seu corpo com eficiência.</p>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="images/personal-trainer.png" alt="Serviço 1" loading="lazy">
+                <h3>Treinamento Personalizado</h3>
+                <p>Programas de treino sob medida para você atingir seus objetivos.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/online-training.png" alt="Serviço 2" loading="lazy">
+                <h3>Aulas em Grupo</h3>
+                <p>Aulas dinâmicas e motivadoras para diferentes níveis.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/athletic-perfomance.png" alt="Serviço 3" loading="lazy">
+                <h3>Avaliação Física</h3>
+                <p>Análise completa para definir seu melhor plano de treino.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/nutrition.png" alt="Serviço 4" loading="lazy">
+                <h3>Nutrição Esportiva</h3>
+                <p>Orientação alimentar para potencializar seus resultados.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Horários -->
+    <section id="schedule">
+        <h2>Horários de Atendimento</h2>
+        <table class="schedule-table">
+            <tr>
+                <th>Dia</th>
+                <th>Horário</th>
+            </tr>
+            <tr>
+                <td>Segunda a Sexta</td>
+                <td>06:00 - 21:00</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>08:00 - 14:00</td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Fechado</td>
+            </tr>
+        </table>
+    </section>
+    
+
+    <!-- Contato -->
+    <section id="contact">
+        <h2>Entre em Contato</h2>
+        <p>Vamos conversar sobre como posso ajudar você a alcançar seus objetivos!</p>
+        
+        <div class="contact-info">
+            <p><strong>📞 Telefone:</strong> <a href="tel:+551112345678">(11) 1234-5678</a></p>
+            <p><strong>📧 Email:</strong> <a href="mailto:5K6jC@example.com">5K6jC@example.com</a></p>
+            <p><strong>📍 Localização:</strong> Treinamento presencial e online</p>
+        </div>
+
+        <form action="#" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <textarea name="message" rows="4" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+
+        <a href="https://wa.me/551112345678" target="_blank" class="whatsapp-button">
+            📲 Fale pelo WhatsApp
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Personal Trainer. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
