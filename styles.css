@@ -1,354 +1,572 @@
-/* Resetando margens e padding */
-* {
+/* --- Configurações Globais --- */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Definindo uma fonte padrão e fundo para o body */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: #f5f5f5;
     color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Estilo do header */
-header {
-    background-color: #333;
+/* --- Navegação --- */
+nav {
+    background: #222;
     color: white;
-    padding: 10px 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin: 0 20px;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease transform 0.3s ease;;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #f1c40f;
-    transform: scale(1.1);
+    color: #25D366;
 }
 
-/* Ícone de menu para dispositivos móveis */
+/* --- Menu Mobile --- */
 .menu-icon {
     display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-    margin-right: 20px;
-}
-
-.menu-icon span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
+    font-size: 28px;
     cursor: pointer;
 }
 
-/* Seção Home */
-#home {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #3498db;
-    color: white;
-}
-
-#home h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-#home p {
-    font-size: 1.2rem;
-}
-
-/* Seção de Serviços */
-#services {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.service-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.service-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.service-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.service-card h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
-
-.service-card p {
-    font-size: 1rem;
-}
-
-/* Estilo da seção de horários */
-#schedule {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#schedule h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* Estilização da tabela */
-.schedule-table {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-.schedule-table th,
-.schedule-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-.schedule-table th {
-    background-color: #3498db;
-    color: white;
-    font-size: 1.2rem;
-}
-
-.schedule-table td {
-    font-size: 1.1rem;
-}
-
-.schedule-table tr:nth-child(even) {
-    background-color: #f4f4f4;
-}
-
-/* Responsividade */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
         display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px 0;
     }
 
     nav ul.active {
         display: flex;
     }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
     .menu-icon {
         display: block;
+        color: white;
     }
 
-    .services-container {
-        grid-template-columns: repeat(2, 1fr); /* Garante 2 colunas */
-        gap: 10px; /* Reduz espaço entre os itens */
-    }
-
-    .service-card {
-        padding: 15px;
-    }
-
-    .service-card img {
-        height: 150px; /* Ajusta a altura da imagem */
-    }
-
-    .service-card h3 {
-        font-size: 1.1rem; /* Ajusta o tamanho do título */
-    }
-
-    .service-card p {
-        font-size: 0.9rem; /* Ajusta o tamanho da descrição */
-    }
-
-    .schedule-table th, .schedule-table td {
-        font-size: 1rem;
-        padding: 8px;
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
     }
 }
 
-@media (max-width: 480px) {
-    .services-container {
-        grid-template-columns: repeat(2, 1fr); /* Garante 2 colunas */
-        gap: 8px; /* Reduz ainda mais o espaço entre os itens */
-    }
-
-    .service-card {
-        padding: 12px;
-    }
-
-    .service-card img {
-        height: 130px; /* Ajusta a altura da imagem para telas muito pequenas */
-    }
-
-    .service-card h3 {
-        font-size: 1rem; /* Ajusta o tamanho do título */
-    }
-
-    .service-card p {
-        font-size: 0.85rem; /* Ajusta o tamanho da descrição */
-    }
+/* Estilização para a seção Home */
+#home {
+    text-align: center;
+    background: linear-gradient(to right, #222, #444);
+    color: white;
+    padding: 80px 20px;
 }
 
-/* Seção Sobre */
+#home h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Estilização para a seção Sobre */
 #about {
-    padding: 40px 20px;
+    background: #f8f8f8;
+    padding: 60px 20px;
     text-align: center;
 }
 
 #about h2 {
     font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
 #about p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Rodapé */
-.footer {
+/* --- Seções --- */
+section {
+    padding: 50px 20px;
     text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: white;
-    margin-top: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.footer p {
-    font-size: 14px;
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Estilo da seção de contato */
-#contact {
-    background-color: #f4f4f4;
-    padding: 40px 20px;
+/* --- Serviços --- */
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    width: 280px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-#contact h2 {
-    font-size: 2rem;
+.service-card img {
+    width: 100px;
+    height: auto;
     margin-bottom: 10px;
 }
 
-.contact-info {
-    margin-bottom: 20px;
+.service-card:hover {
+    transform: scale(1.05);
 }
 
-.contact-info p {
-    font-size: 1.1rem;
-    margin: 5px 0;
+/* --- Tabela de Horários --- */
+.schedule-table {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
 }
 
-.contact-info a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
+.schedule-table th, .schedule-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.schedule-table th {
+    background: #222;
+    color: white;
 }
 
-/* Formulário de Contato */
+/* --- Formulário de Contato --- */
 .contact-form {
     max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    resize: none;
 }
 
 .contact-form button {
-    background-color: #3498db;
+    background: #25D366;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
+    width: 100%;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
     transition: background 0.3s;
 }
 
 .contact-form button:hover {
-    background-color: #2980b9;
+    background: #1db954;
 }
 
-/* Estilo para o botão de envio durante o carregamento */
-.contact-form button:disabled {
-    background-color: #2980b9;
-    cursor: not-allowed;
-}
-
-/* Botão de WhatsApp */
+/* --- Botão do WhatsApp --- */
 .whatsapp-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #25d366;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
     color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 18px;
     text-decoration: none;
-    border-radius: 25px;
-    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
 .whatsapp-button:hover {
-    background-color: #1ebe57;
+    transform: scale(1.1);
+}
+
+.whatsapp-button i {
+    margin-right: 8px;
+}
+
+/* --- Rodapé --- */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#plans {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+#plans h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#plans p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.plan p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.plan ul li {
+    font-size: 1rem;
+    color: #444;
+    padding: 5px 0;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e63946;
+    display: block;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #e63946;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #d62839;
+    transform: scale(1.05);
+}
+
+.featured {
+    border: 2px solid #e63946;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+    background: #e63946;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* Estilos do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 1% auto;
+    padding: 15px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideDown 0.4s;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    color: #e63946;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-header p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.modal-header span {
+    font-weight: bold;
+    color: #222;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #e63946;
+}
+
+/* Formulário */
+#subscriptionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    width: 100%;
+    position: relative;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 16px;
+}
+
+.form-group input {
+    padding-left: 40px !important;
+}
+
+/* Ajuste extra para os campos lado a lado */
+.form-row .form-group i {
+    left: 12px;
+}
+
+#subscriptionForm input {
+    width: 80%;
+    padding: 10px 0px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+#subscriptionForm input:focus {
+    border-color: #e63946;
+    outline: none;
+}
+
+.btn-submit {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background: #d62839;
+    transform: translateY(-2px);
+}
+
+.security-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.security-info i {
+    margin-right: 5px;
+    color: #25D366;
+}
+
+/* Pop-up de Confirmação */
+.simple-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+    max-width: 400px;
+    width: 75%;
+    animation: slideDown 0.4s;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation-icon {
+    color: #25D366;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.simple-popup h3 {
+    color: #e63946;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.simple-popup p {
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+#closePopup {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+#closePopup:hover {
+    background: #d62839;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

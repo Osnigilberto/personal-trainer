@@ -1,72 +1,128 @@
-// 1. Animação de Entrada (Fade-in)
-const sections = document.querySelectorAll('section');
-
-let timeout;
-function checkVisibility() {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                section.classList.add('visible');
-            } else {
-                section.classList.remove('visible');
-            }
-        });
-    }, 100);
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
 }
 
-// Executa imediatamente ao carregar a página
-checkVisibility();
-
-// 2. Scroll Suave
-const links = document.querySelectorAll('nav a');
-
-links.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        // Desencadeando rolagem suave
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+function revealSections() {
+    document.querySelectorAll('section').forEach(section => {
+        if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add('visible');
+        }
+    });
+}
+document.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            section.classList.add("visible");
+        }
     });
 });
 
-// 3. Validação de Formulário
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Mensagem enviada com sucesso!");
+    this.reset();
+});
 
-const form = document.querySelector('.contact-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Impede o envio real do formulário
+// Função para mostrar o modal de assinatura
+function subscribe(planName) {
+    const modal = document.getElementById('subscriptionModal');
+    const planElement = document.getElementById('selectedPlan');
+    const priceElement = document.getElementById('selectedPrice');
     
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+    // Definir o plano selecionado
+    let planText, priceText;
+    
+    switch(planName) {
+        case 'Plano Básico':
+            planText = 'Plano Básico';
+            priceText = 'R$ 99/mês';
+            break;
+        case 'Plano Avançado':
+            planText = 'Plano Avançado';
+            priceText = 'R$ 199/mês';
+            break;
+        case 'Plano Premium':
+            planText = 'Plano Premium';
+            priceText = 'R$ 299/mês';
+            break;
+        default:
+            planText = planName;
+            priceText = '';
+    }
+    
+    planElement.textContent = planText;
+    priceElement.textContent = priceText;
+    
+    // Mostrar o modal
+    modal.style.display = 'block';
+    
+    // Impedir que a página role quando o modal estiver aberto
+    document.body.style.overflow = 'hidden';
+}
 
-    if (!name || !email || !message) {
-        alert('Todos os campos são obrigatórios!');
-    } else {
-        // Salva os dados no localStorage
-        const formData = {
-            name,
-            email,
-            message
-        };
+// Fechar o modal quando clicar no X
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('subscriptionModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
 
-        localStorage.setItem('formData', JSON.stringify(formData));
-
-        // Desabilitar o botão de envio
-        const button = form.querySelector('button');
-        button.disabled = true;
-        button.textContent = 'Enviando...';
-
-        // Simulação de envio (espera 2 segundos)
-        setTimeout(() => {
-            button.disabled = false;
-            button.textContent = 'Enviar Mensagem';
-            alert('Mensagem enviada com sucesso!');
-        }, 2000);
+// Fechar o modal quando clicar fora dele
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('subscriptionModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 });
 
+// Fechar o popup de confirmação
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('confirmationPopup').style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
 
+// Processar o formulário de assinatura
+document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Esconder o modal de assinatura
+    document.getElementById('subscriptionModal').style.display = 'none';
+    
+    // Mostrar o popup de confirmação
+    const planName = document.getElementById('selectedPlan').textContent;
+    document.getElementById('confirmationMessage').textContent = 
+        `Sua assinatura do ${planName} foi confirmada com sucesso!`;
+    document.getElementById('confirmationPopup').style.display = 'block';
+    
+    // Limpar o formulário
+    this.reset();
+});
+
+// Menu mobile
+function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('active');
+}
+
+// Animar seções quando aparecem na tela
+function revealSections() {
+    document.querySelectorAll('section').forEach(section => {
+        if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add('visible');
+        }
+    });
+}
+
+// Event listeners
+document.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+
+// Formulário de contato
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Mensagem enviada com sucesso!");
+    this.reset();
+});

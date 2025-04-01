@@ -7,122 +7,221 @@
     <meta name="description" content="Transforme seu corpo com um Personal Trainer. Treinamento personalizado para atingir seus objetivos de forma eficaz e saudável.">
     <title>Personal Trainer - Transforme seu Corpo</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a1d4c0f36c.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <!-- Navegação -->
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#schedule">Horários</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
             <div class="menu-icon" onclick="toggleMenu()">
                 <span>&#9776;</span>
             </div>
+            <ul>
+                <li><a href="#home"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i> Sobre</a></li>
+                <li><a href="#services"><i class="fa-solid fa-dumbbell"></i> Serviços</a></li>
+                <li><a href="#schedule"><i class="fa-solid fa-calendar"></i> Horários</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Seção Home -->
+    <!-- Seções -->
     <section id="home">
-        <h1>Transforme Seu Corpo Com um Personal Trainer</h1>
-        <p>Treinamento personalizado para alcançar seus objetivos de forma eficiente e saudável.</p>
+        <h1>Transforme Seu Corpo com um Treinamento Personalizado</h1>
+        <p>Alcance seus objetivos com um plano de treino feito sob medida para você.
+            Com orientação profissional, eficiência e foco, sua evolução será constante e sustentável</p>
     </section>
 
-    <!-- Seção Sobre -->
     <section id="about">
         <h2>Sobre Mim</h2>
-        <p>Sou um Personal Trainer com anos de experiência ajudando pessoas a conquistarem saúde e qualidade de vida através do treinamento físico e hábitos saudáveis.</p>
-        <p>Minha missão é criar um plano de treino que se encaixe na sua rotina e transforme seu corpo com eficiência.</p>
+        <p>Sou Personal Trainer especializado em transformar vidas através do treinamento físico e hábitos saudáveis.
+            Com anos de experiência, desenvolvo planos personalizados que se adaptam às suas necessidades e estilo de vida,
+            ajudando você a alcançar seus objetivos de forma eficiente e sustentável. Meu compromisso é proporcionar saúde,
+            bem-estar e performance, guiando você em cada etapa da sua jornada fitness.</p>
     </section>
 
-    <!-- Seção de Serviços -->
     <section id="services">
         <h2>Nossos Serviços</h2>
         <div class="services-container">
             <div class="service-card">
-                <img src="images/personal-trainer.png" alt="Serviço 1" loading="lazy">
+                <img src="images/personal-trainer.png" alt="Treinamento Personalizado">
                 <h3>Treinamento Personalizado</h3>
-                <p>Programas de treino sob medida para você atingir seus objetivos.</p>
+                <p>Programas de treino sob medida.</p>
             </div>
             <div class="service-card">
-                <img src="images/online-training.png" alt="Serviço 2" loading="lazy">
-                <h3>Aulas em Grupo</h3>
-                <p>Aulas dinâmicas e motivadoras para diferentes níveis.</p>
-            </div>
-            <div class="service-card">
-                <img src="images/athletic-perfomance.png" alt="Serviço 3" loading="lazy">
-                <h3>Avaliação Física</h3>
-                <p>Análise completa para definir seu melhor plano de treino.</p>
-            </div>
-            <div class="service-card">
-                <img src="images/nutrition.png" alt="Serviço 4" loading="lazy">
+                <img src="images/nutrition.png" alt="Nutrição Esportiva">
                 <h3>Nutrição Esportiva</h3>
-                <p>Orientação alimentar para potencializar seus resultados.</p>
+                <p>Orientação alimentar para melhorar seus resultados.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/online-training.png" alt="Treinamento Online">
+                <h3>Treinamento Online</h3>
+                <p>Aulas online com instrutores especializados.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/athletic-perfomance.png" alt="Treinos Esportiva">
+                <h3>Treinos Esportiva</h3>
+                <p>Treinos personalizados para atletas e praticantes de esportes.</p>
             </div>
         </div>
     </section>
-    
 
-    <!-- Horários -->
     <section id="schedule">
         <h2>Horários de Atendimento</h2>
         <table class="schedule-table">
-            <tr>
-                <th>Dia</th>
-                <th>Horário</th>
-            </tr>
-            <tr>
-                <td>Segunda a Sexta</td>
-                <td>06:00 - 21:00</td>
-            </tr>
-            <tr>
-                <td>Sábado</td>
-                <td>08:00 - 14:00</td>
-            </tr>
-            <tr>
-                <td>Domingo</td>
-                <td>Fechado</td>
-            </tr>
+            <tr><th>Dia</th><th>Horário</th></tr>
+            <tr><td>Seg-Sex</td><td>06:00 - 21:00</td></tr>
+            <tr><td>Sábado</td><td>08:00 - 14:00</td></tr>
+            <tr><td>Domingo</td><td>Fechado</td></tr>
         </table>
     </section>
-    
 
-    <!-- Contato -->
+    <section id="plans">
+        <h2>Escolha o Plano Ideal Para Você</h2>
+        <p>Todos os planos incluem suporte personalizado e acompanhamento contínuo para garantir seus melhores resultados.</p>
+        
+        <div class="plans-container">
+            
+            <!-- Plano Básico -->
+            <div class="plan">
+                <h3>Plano Básico</h3>
+                <p>Ótimo para quem está começando e quer treinar no seu ritmo.</p>
+                <ul>
+                    <li>✔ Treinos 2x por semana</li>
+                    <li>✔ Acompanhamento via WhatsApp</li>
+                    <li>✔ Dicas de Nutrição</li>
+                    <li>✔ Acesso a vídeos exclusivos</li>
+                </ul>
+                <span class="price">R$ 99/mês</span>
+                <button onclick="subscribe('Plano Básico')">Assinar Agora</button>
+            </div>
+    
+            <!-- Plano Avançado (Destaque) -->
+            <div class="plan featured">
+                <h3>Plano Avançado <span class="badge">Mais Popular</span></h3>
+                <p>Para quem quer resultados mais rápidos e acompanhamento próximo.</p>
+                <ul>
+                    <li>✔ Treinos 4x por semana</li>
+                    <li>✔ Avaliação física mensal</li>
+                    <li>✔ Plano alimentar personalizado</li>
+                    <li>✔ Comunidade exclusiva</li>
+                    <li>✔ Sessão de treino ao vivo 1x por mês</li>
+                </ul>
+                <span class="price">R$ 199/mês</span>
+                <button onclick="subscribe('Plano Avançado')">Assinar Agora</button>
+            </div>
+    
+            <!-- Plano Premium -->
+            <div class="plan">
+                <h3>Plano Premium</h3>
+                <p>Para quem busca a melhor experiência e um acompanhamento completo.</p>
+                <ul>
+                    <li>✔ Treinos 6x por semana</li>
+                    <li>✔ Consultoria nutricional completa</li>
+                    <li>✔ Sessões de coaching individuais</li>
+                    <li>✔ Suporte 24h</li>
+                    <li>✔ Acesso total ao conteúdo VIP</li>
+                </ul>
+                <span class="price">R$ 299/mês</span>
+                <button onclick="subscribe('Plano Premium')">Assinar Agora</button>
+            </div>
+            
+        </div>
+    </section>
+
+        <!-- Pop-up Modal -->
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3>Finalize sua Assinatura</h3>
+                <p id="selectedPlanText">Plano Selecionado: <span id="selectedPlan"></span></p>
+                <p id="selectedPriceText">Valor: <span id="selectedPrice"></span></p>
+            </div>
+            
+            <form id="subscriptionForm">
+                <div class="form-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" placeholder="Nome Completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <input type="text" id="card" placeholder="Número do Cartão" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="text" id="expiry" placeholder="Validade (MM/AA)" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">Confirmar Assinatura</button>
+            </form>
+            
+            <div class="security-info">
+                <p><i class="fa-solid fa-lock"></i> Suas informações estão seguras conosco</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up de Confirmação -->
+    <div id="confirmationPopup" class="simple-popup">
+        <div class="popup-content">
+            <i class="fa-solid fa-circle-check confirmation-icon"></i>
+            <h3>Assinatura Confirmada! 🎉</h3>
+            <p id="confirmationMessage">Sua assinatura foi realizada com sucesso.</p>
+            <p>Você receberá um e-mail com todos os detalhes.</p>
+            <button id="closePopup">Entendido</button>
+        </div>
+    </div>
+    
     <section id="contact">
         <h2>Entre em Contato</h2>
-        <p>Vamos conversar sobre como posso ajudar você a alcançar seus objetivos!</p>
-        
+        <p>Vamos conversar sobre seus objetivos!</p>
         <div class="contact-info">
-            <p><strong>📞 Telefone:</strong> <a href="tel:+551112345678">(11) 1234-5678</a></p>
-            <p><strong>📧 Email:</strong> <a href="mailto:5K6jC@example.com">5K6jC@example.com</a></p>
-            <p><strong>📍 Localização:</strong> Treinamento presencial e online</p>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+551112345678">(11) 1234-5678</a></p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:5K6jC@example.com">5K6jC@example.com</a></p>
         </div>
 
-        <form action="#" method="POST" class="contact-form">
+        <form class="contact-form">
             <input type="text" name="name" placeholder="Seu Nome" required>
             <input type="email" name="email" placeholder="Seu Email" required>
             <textarea name="message" rows="4" placeholder="Sua Mensagem" required></textarea>
             <button type="submit">Enviar Mensagem</button>
         </form>
-
-        <a href="https://wa.me/551112345678" target="_blank" class="whatsapp-button">
-            📲 Fale pelo WhatsApp
-        </a>
     </section>
 
-    <footer class="footer">
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/551112345678" class="whatsapp-button" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <footer>
         <p>&copy; 2025 Personal Trainer. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const nav = document.querySelector('nav ul');
-            nav.classList.toggle('active');
-        }
-    </script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        Inputmask("9999 9999 9999 9999").mask(document.getElementById("card"));
+        Inputmask("99/99").mask(document.getElementById("expiry"));
+        Inputmask("999").mask(document.getElementById("cvv"));
+    });
+</script>
 </body>
 </html>
